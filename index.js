@@ -11,8 +11,15 @@ app.get('/', (req, res) => {
         name: "Marcos",
         lastname: "Marques"
     }
-    res.render('home', { user: user });
+
+    const auth = true;
+
+    res.render('home', { user: user, auth });
 });
+
+app.get('/dashboard', (req, res) => {
+    res.render('dashboard');
+})
 
 app.listen(3000, () => {
     console.log("App funcionando!");
