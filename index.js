@@ -7,7 +7,7 @@ app.set('view engine', 'handlebars');
 app.set('views', './views');
 
 app.get('/', (req, res) => {
-    res.render('home', { layout: false });
+    res.render('home');
 });
 
 app.listen(3000, () => {
