@@ -7,7 +7,11 @@ app.set('view engine', 'handlebars');
 app.set('views', './views');
 
 app.get('/', (req, res) => {
-    res.render('home');
+    const user = {
+        name: "Marcos",
+        lastname: "Marques"
+    }
+    res.render('home', { user: user });
 });
 
 app.listen(3000, () => {
