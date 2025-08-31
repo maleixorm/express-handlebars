@@ -14,7 +14,9 @@ app.get('/', (req, res) => {
 
     const auth = true;
 
-    res.render('home', { user: user, auth });
+    const approved = false;
+
+    res.render('home', { user: user, auth, approved });
 });
 
 app.get('/dashboard', (req, res) => {
