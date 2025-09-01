@@ -26,7 +26,7 @@ app.get('/dashboard', (req, res) => {
     res.render('dashboard', {items});
 })
 
-app.get('/blog', (req, res) => {
+app.get('/post', (req, res) => {
     const post = {
         title: "Aprender Node.JS",
         category: "Programming",
@@ -34,7 +34,32 @@ app.get('/blog', (req, res) => {
         comments: 4
     }
 
-    res.render('blogpost', {post});
+    res.render('blogpost', { post });
+});
+
+app.get('/blog', (req, res)=> {
+    const posts = [
+        {
+            title: "Aprender Node.JS",
+            category: "Programação",
+            body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum, dolores expedita.",
+            comments: 4
+        },
+        {
+            title: "Aprender PHP",
+            category: "Programação",
+            body: "Lorem ipsum dolor sit amet consectetur.",
+            comments: 7
+        },
+        {
+            title: "Aprender Java",
+            category: "Programação",
+            body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+            comments: 43
+        }
+    ]
+
+    res.render('blog', { posts });
 });
 
 app.listen(3000, () => {
